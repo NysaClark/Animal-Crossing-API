@@ -8,18 +8,18 @@ const app = express();
 const connectDB = require('./db/connect')
 
 // middleware
-const authenticateUser = require();
-const errorHandler = require();
-const notFound = require();
+const authenticateUser = require('./middleware/auth');
+const errorHandler = require('./middleware/error-handler');
+const notFound = require('./middleware/not-found');
 
 // routes
-const villagersRouter = require()
-const authRouter = require('')
+const charactersRouter = require('./routes/characters')
+const authRouter = require('./routes/auth')
 
 // SwaggerUI
-const YAML = require('yamljs');
-const swaggerUI = require('swagger-ui-express')
-const swaggerDoc = YAML.load('./swagger.yaml')
+// const YAML = require('yamljs');
+// const swaggerUI = require('swagger-ui-express')
+// const swaggerDoc = YAML.load('./swagger.yaml')
 
 // security libraries
 const xss = require('xss-clean');
@@ -51,9 +51,9 @@ app
   // .use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDoc))
 
   .use('/api/v1/auth', authRouter)
-  .use('/api/v1/villagers', /* authenticateUser, */ villagersRouter)
+  .use('/api/v1/characters', authenticateUser, charactersRouter)
 
-  // .use(notFound)
+  .use(notFound)
   // .use(errorHandler)
 
 const startServer = async() => {
