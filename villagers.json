@@ -1,0 +1,72 @@
+[
+  {
+    "name": "curlos",
+    "personality": "smug",
+    "species": "sheep",
+    "gender": "male",
+    "birthday": "5/8"
+  },
+  {
+    "name": "apollo",
+    "personality": "cranky",
+    "species": "eagle",
+    "gender": "male",
+    "birthday": "7/4"
+  },
+  {
+    "name": "jitters",
+    "personality": "jock",
+    "species": "bird",
+    "gender": "male",
+    "birthday": "2/2"
+  },
+  {
+    "name": "audie",
+    "personality": "peppy",
+    "species": "wolf",
+    "gender": "female",
+    "birthday": "8/31"
+  },
+  {
+    "name": "stu",
+    "personality": "lazy",
+    "species": "bull",
+    "gender": "male",
+    "birthday": "4/20"
+  },
+  {
+    "name": "kiki",
+    "personality": "normal",
+    "species": "cat",
+    "gender": "female",
+    "birthday": "10/8"
+  },
+  {
+    "name": "bertha",
+    "personality": "normal",
+    "species": "hippo",
+    "gender": "female",
+    "birthday": "4/25"
+  },
+  {
+    "name": "olive",
+    "personality": "normal",
+    "species": "cub",
+    "gender": "female",
+    "birthday": "7/12"
+  },
+  {
+    "name": "deli",
+    "personality": "lazy",
+    "species": "monkey",
+    "gender": "male",
+    "birthday": "5/24"
+  },
+  {
+    "name": "maddie",
+    "personality": "peppy",
+    "species": "dog",
+    "gender": "female",
+    "birthday": "1/11"
+  }
+]

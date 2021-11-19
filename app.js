@@ -46,7 +46,7 @@ app
   .use(xss())
 
   // .get('/', (req, res) => {
-  //   res.send(`<h1>Animal Crossing API><a href="/api-docs">Documentation</a>`)
+  //   res.send(`<h1>Animal Crossing API</a>`)
   // })
   // .use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDoc))
 

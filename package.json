@@ -1,7 +1,6 @@
 {
   "name": "ac-api",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
@@ -25,5 +24,14 @@
   },
   "engines": {
     "node": "12.x"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NysaClark/Animal-Crossing-API.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NysaClark/Animal-Crossing-API/issues"
+  },
+  "homepage": "https://github.com/NysaClark/Animal-Crossing-API#readme",
+  "description": ""
 }
