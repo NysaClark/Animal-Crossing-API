@@ -50,8 +50,8 @@ app
   // })
   // .use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDoc))
 
-  .use('/api/v1/auth', authRouter)
   .use('/api/v1/characters', authenticateUser, charactersRouter)
+  .use('/api/v1/auth', authRouter)
 
   .use(notFound)
   // .use(errorHandler)
