@@ -1,5 +1,12 @@
-const createCharacter = (req, res) => {
-  res.send('createCharacter')
+const { StatusCodes } = require('http-status-codes');
+const { NotFoundError, BadRequest } = require('../errors');
+const Character = require('../models/Character')
+
+const createCharacter = async(req, res) => {
+  req.body.createdBy = req.user.userID;
+  const character = await Character.create(req.body);
+
+  res.status(StatusCodes.CREATED).json({ character })
 }
 
 const getAllCharacters = (req, res) => {
