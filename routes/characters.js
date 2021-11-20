@@ -8,7 +8,11 @@ const {
   deleteCharacter
 } = require('../controllers/characters')
 
-router.route('/').post(createCharacter).get(getAllCharacters).get(getAllVillagers)
+// villagers
+router.route('/villagers').get(getAllVillagers)
+
+// characters
+router.route('/').post(createCharacter).get(getAllCharacters)
 router.route('/:id').put(updateCharacter).delete(deleteCharacter)
 
 module.exports = router;
