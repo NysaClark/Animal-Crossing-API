@@ -17,9 +17,9 @@ const charactersRouter = require('./routes/characters')
 const authRouter = require('./routes/auth')
 
 // SwaggerUI
-// const YAML = require('yamljs');
-// const swaggerUI = require('swagger-ui-express')
-// const swaggerDoc = YAML.load('./swagger.yaml')
+const YAML = require('yamljs');
+const swaggerUI = require('swagger-ui-express')
+const swaggerDoc = YAML.load('./swagger.yaml')
 
 // security libraries
 const xss = require('xss-clean');
@@ -45,16 +45,13 @@ app
   .use(cors())
   .use(xss())
 
-  // .get('/', (req, res) => {
-  //   res.send(`<h1>Animal Crossing API</a>`)
-  // })
-  // .use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDoc))
+  .use('/', swaggerUI.serve, swaggerUI.setup(swaggerDoc))
 
   .use('/api/v1/characters', authenticateUser, charactersRouter)
   .use('/api/v1/auth', authRouter)
 
   .use(notFound)
-  // .use(errorHandler)
+  .use(errorHandler)
 
 const startServer = async() => {
   try{

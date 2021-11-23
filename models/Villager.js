@@ -31,7 +31,7 @@ const villagerSchema = new mongoose.Schema(
       }
     },
     birthday: {
-      type: String,
+      type: Date,
       required: [true, 'birthday (m/d) must be provided'],
     }
   }

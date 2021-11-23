@@ -1,0 +1,735 @@
+openapi: 3.0.0
+info:
+  title: Animal Crossing API
+  contact: {}
+  version: '1.0'
+servers:
+- url: http://example.com
+  variables: {}
+paths:
+  /:
+    post:
+      tags:
+      - Characters
+      summary: createCharacter
+      operationId: createCharacter
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createCharacterRequest'
+            example:
+              name: dan
+              gender: male
+              birthday: 4/17
+        required: true
+      responses:
+        default:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/createCharacter'
+              example:
+                character:
+                  name: nysa
+                  species: human
+                  gender: female
+                  birthday: 2004-05-15T07:00:00.000Z
+                  createdBy: 61982fb3162f68bbe3415d01
+                  _id: 619c2f010cf898ff7954cac2
+                  createdAt: 2021-11-23T00:00:01.929Z
+                  updatedAt: 2021-11-23T00:00:01.929Z
+                  __v: 0
+      deprecated: false
+    get:
+      tags:
+      - Characters
+      summary: getAllCharacters
+      operationId: getAllCharacters
+      parameters: []
+      responses:
+        default:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getAllCharacters'
+              example:
+                characters:
+                - _id: 619c2b9f30c7bb45d8b95e71
+                  name: nysa
+                  species: human
+                  gender: female
+                  birthday: 2001-05-15T07:00:00.000Z
+                  createdBy: 61982fb3162f68bbe3415d01
+                  createdAt: 2021-11-22T23:45:35.326Z
+                  updatedAt: 2021-11-22T23:45:35.326Z
+                  __v: 0
+                - _id: 619c2bab30c7bb45d8b95e73
+                  name: ben
+                  species: human
+                  gender: male
+                  birthday: 2001-01-10T07:00:00.000Z
+                  createdBy: 61982fb3162f68bbe3415d01
+                  createdAt: 2021-11-22T23:45:47.752Z
+                  updatedAt: 2021-11-22T23:45:47.752Z
+                  __v: 0
+                - _id: 619c2c4aff3134b0c50fadcd
+                  name: andrew
+                  species: human
+                  gender: male
+                  birthday: 2001-06-21T07:00:00.000Z
+                  createdBy: 61982fb3162f68bbe3415d01
+                  createdAt: 2021-11-22T23:48:26.288Z
+                  updatedAt: 2021-11-22T23:48:26.288Z
+                  __v: 0
+                - _id: 619c2ca8341baa3105f28b93
+                  name: danielle
+                  species: human
+                  gender: female
+                  birthday: 2001-03-14T07:00:00.000Z
+                  createdBy: 61982fb3162f68bbe3415d01
+                  createdAt: 2021-11-22T23:50:00.496Z
+                  updatedAt: 2021-11-22T23:50:00.496Z
+                  __v: 0
+                length: 4
+      deprecated: false
+  /villagers:
+    get:
+      tags:
+      - Characters
+      summary: getAllVillagers
+      operationId: getAllVillagers
+      parameters:
+      - name: sort
+        in: query
+        description: 'accepts keys that use to sort the results'
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getAllVillagers'
+              example:
+                villagers:
+                - _id: 619c2982bc6bab10abae46e0
+                  name: apollo
+                  personality: cranky
+                  species: eagle
+                  gender: male
+                  birthday: 2001-07-04T07:00:00.000Z
+                  __v: 0
+                - _id: 619c2982bc6bab10abae46e2
+                  name: audie
+                  personality: peppy
+                  species: wolf
+                  gender: female
+                  birthday: 2001-08-31T07:00:00.000Z
+                  __v: 0
+                - _id: 619c2982bc6bab10abae46e5
+                  name: bertha
+                  personality: normal
+                  species: hippo
+                  gender: female
+                  birthday: 2001-04-25T07:00:00.000Z
+                  __v: 0
+                - _id: 619c2982bc6bab10abae46df
+                  name: curlos
+                  personality: smug
+                  species: sheep
+                  gender: male
+                  birthday: 2001-05-08T07:00:00.000Z
+                  __v: 0
+                - _id: 619c2982bc6bab10abae46e7
+                  name: deli
+                  personality: lazy
+                  species: monkey
+                  gender: male
+                  birthday: 2001-05-24T07:00:00.000Z
+                  __v: 0
+                - _id: 619c2982bc6bab10abae46e1
+                  name: jitters
+                  personality: jock
+                  species: bird
+                  gender: male
+                  birthday: 2001-02-02T07:00:00.000Z
+                  __v: 0
+                - _id: 619c2982bc6bab10abae46e4
+                  name: kiki
+                  personality: normal
+                  species: cat
+                  gender: female
+                  birthday: 2001-10-08T07:00:00.000Z
+                  __v: 0
+                - _id: 619c2982bc6bab10abae46e8
+                  name: maddie
+                  personality: peppy
+                  species: dog
+                  gender: female
+                  birthday: 2001-01-11T07:00:00.000Z
+                  __v: 0
+                - _id: 619c2982bc6bab10abae46e6
+                  name: olive
+                  personality: normal
+                  species: cub
+                  gender: female
+                  birthday: 2001-07-12T07:00:00.000Z
+                  __v: 0
+                - _id: 619c2982bc6bab10abae46e3
+                  name: stu
+                  personality: lazy
+                  species: bull
+                  gender: male
+                  birthday: 2001-04-20T07:00:00.000Z
+                  __v: 0
+                length: 10
+      deprecated: false
+  /{id}:
+    put:
+      tags:
+      - Characters
+      summary: updateCharacter
+      operationId: updateCharacter
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 619c31100cf898ff7954cacb
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateCharacterRequest'
+            example:
+              birthday: 7/2
+        required: true
+      responses:
+        default:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/updateCharacter'
+              example:
+                character:
+                  _id: 619c31100cf898ff7954cacb
+                  name: dan
+                  species: human
+                  gender: male
+                  birthday: 2001-07-02T07:00:00.000Z
+                  createdBy: 61982fb3162f68bbe3415d01
+                  createdAt: 2021-11-23T00:08:48.315Z
+                  updatedAt: 2021-11-23T00:09:13.912Z
+                  __v: 0
+      deprecated: false
+    delete:
+      tags:
+      - Characters
+      summary: deleteCharacter
+      operationId: deleteCharacter
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 619c30ba0cf898ff7954cac7
+      responses:
+        default:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/deleteCharacter'
+              example:
+                character:
+                  _id: 619c31100cf898ff7954cacb
+                  name: dan
+                  species: human
+                  gender: male
+                  birthday: 2001-07-02T07:00:00.000Z
+                  createdBy: 61982fb3162f68bbe3415d01
+                  createdAt: 2021-11-23T00:08:48.315Z
+                  updatedAt: 2021-11-23T00:09:13.912Z
+                  __v: 0
+      deprecated: false
+  /register:
+    post:
+      tags:
+      - Auth
+      summary: Register
+      operationId: Register
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+            example:
+              name: nysa
+              email: email@gmail.com
+              password: pa$$word
+        required: true
+      responses:
+        default:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Register'
+              example:
+                user:
+                  name: nysa
+                  userID: 619c2e4f0cf898ff7954cabf
+                token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MTljMmU0ZjBjZjg5OGZmNzk1NGNhYmYiLCJuYW1lIjoibnlzYSIsImlhdCI6MTYzNzYyNTQyMywiZXhwIjoxNjQwMjE3NDIzfQ.etUt3PBttKSOLMo3S2qLxUzGgvYOxqyXGUUrIqpEIOw
+      deprecated: false
+      security: []
+  /login:
+    post:
+      tags:
+      - Auth
+      summary: Login
+      operationId: Login
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+            example:
+              email: email@gmail.com
+              password: pa$$word
+        required: true
+      responses:
+        default:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Login'
+              example:
+                user:
+                  name: nysa
+                  userID: 619c2e4f0cf898ff7954cabf
+                token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MTljMmU0ZjBjZjg5OGZmNzk1NGNhYmYiLCJuYW1lIjoibnlzYSIsImlhdCI6MTYzNzYyNTQ3NCwiZXhwIjoxNjQwMjE3NDc0fQ.8csjB4qeKCPz-wnXimNfZHeRrvhAW7C4Dtdui3-YjQo
+      deprecated: false
+      security: []
+components:
+  schemas:
+    createCharacterRequest:
+      title: createCharacterRequest
+      required:
+      - name
+      - gender
+      - birthday
+      type: object
+      properties:
+        name:
+          type: string
+        gender:
+          type: string
+        birthday:
+          type: string
+      example:
+        name: dan
+        gender: male
+        birthday: 4/17
+    createCharacter:
+      title: createCharacter
+      required:
+      - character
+      type: object
+      properties:
+        character:
+          $ref: '#/components/schemas/Character'
+      example:
+        character:
+          name: nysa
+          species: human
+          gender: female
+          birthday: 2004-05-15T07:00:00.000Z
+          createdBy: 61982fb3162f68bbe3415d01
+          _id: 619c2f010cf898ff7954cac2
+          createdAt: 2021-11-23T00:00:01.929Z
+          updatedAt: 2021-11-23T00:00:01.929Z
+          __v: 0
+    Character:
+      title: Character
+      required:
+      - name
+      - species
+      - gender
+      - birthday
+      - createdBy
+      - _id
+      - createdAt
+      - updatedAt
+      - __v
+      type: object
+      properties:
+        name:
+          type: string
+        species:
+          type: string
+        gender:
+          type: string
+        birthday:
+          type: string
+        createdBy:
+          type: string
+        _id:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        __v:
+          type: integer
+          format: int32
+      example:
+        name: nysa
+        species: human
+        gender: female
+        birthday: 2004-05-15T07:00:00.000Z
+        createdBy: 61982fb3162f68bbe3415d01
+        _id: 619c2f010cf898ff7954cac2
+        createdAt: 2021-11-23T00:00:01.929Z
+        updatedAt: 2021-11-23T00:00:01.929Z
+        __v: 0
+    getAllCharacters:
+      title: getAllCharacters
+      required:
+      - characters
+      - length
+      type: object
+      properties:
+        characters:
+          type: array
+          items:
+            $ref: '#/components/schemas/Character'
+          description: ''
+        length:
+          type: integer
+          format: int32
+      example:
+        characters:
+        - _id: 619c2b9f30c7bb45d8b95e71
+          name: nysa
+          species: human
+          gender: female
+          birthday: 2001-05-15T07:00:00.000Z
+          createdBy: 61982fb3162f68bbe3415d01
+          createdAt: 2021-11-22T23:45:35.326Z
+          updatedAt: 2021-11-22T23:45:35.326Z
+          __v: 0
+        - _id: 619c2bab30c7bb45d8b95e73
+          name: ben
+          species: human
+          gender: male
+          birthday: 2001-01-10T07:00:00.000Z
+          createdBy: 61982fb3162f68bbe3415d01
+          createdAt: 2021-11-22T23:45:47.752Z
+          updatedAt: 2021-11-22T23:45:47.752Z
+          __v: 0
+        - _id: 619c2c4aff3134b0c50fadcd
+          name: andrew
+          species: human
+          gender: male
+          birthday: 2001-06-21T07:00:00.000Z
+          createdBy: 61982fb3162f68bbe3415d01
+          createdAt: 2021-11-22T23:48:26.288Z
+          updatedAt: 2021-11-22T23:48:26.288Z
+          __v: 0
+        - _id: 619c2ca8341baa3105f28b93
+          name: danielle
+          species: human
+          gender: female
+          birthday: 2001-03-14T07:00:00.000Z
+          createdBy: 61982fb3162f68bbe3415d01
+          createdAt: 2021-11-22T23:50:00.496Z
+          updatedAt: 2021-11-22T23:50:00.496Z
+          __v: 0
+        length: 4
+    getAllVillagers:
+      title: getAllVillagers
+      required:
+      - villagers
+      - length
+      type: object
+      properties:
+        villagers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Villager'
+          description: ''
+        length:
+          type: integer
+          format: int32
+      example:
+        villagers:
+        - _id: 619c2982bc6bab10abae46e0
+          name: apollo
+          personality: cranky
+          species: eagle
+          gender: male
+          birthday: 2001-07-04T07:00:00.000Z
+          __v: 0
+        - _id: 619c2982bc6bab10abae46e2
+          name: audie
+          personality: peppy
+          species: wolf
+          gender: female
+          birthday: 2001-08-31T07:00:00.000Z
+          __v: 0
+        - _id: 619c2982bc6bab10abae46e5
+          name: bertha
+          personality: normal
+          species: hippo
+          gender: female
+          birthday: 2001-04-25T07:00:00.000Z
+          __v: 0
+        - _id: 619c2982bc6bab10abae46df
+          name: curlos
+          personality: smug
+          species: sheep
+          gender: male
+          birthday: 2001-05-08T07:00:00.000Z
+          __v: 0
+        - _id: 619c2982bc6bab10abae46e7
+          name: deli
+          personality: lazy
+          species: monkey
+          gender: male
+          birthday: 2001-05-24T07:00:00.000Z
+          __v: 0
+        - _id: 619c2982bc6bab10abae46e1
+          name: jitters
+          personality: jock
+          species: bird
+          gender: male
+          birthday: 2001-02-02T07:00:00.000Z
+          __v: 0
+        - _id: 619c2982bc6bab10abae46e4
+          name: kiki
+          personality: normal
+          species: cat
+          gender: female
+          birthday: 2001-10-08T07:00:00.000Z
+          __v: 0
+        - _id: 619c2982bc6bab10abae46e8
+          name: maddie
+          personality: peppy
+          species: dog
+          gender: female
+          birthday: 2001-01-11T07:00:00.000Z
+          __v: 0
+        - _id: 619c2982bc6bab10abae46e6
+          name: olive
+          personality: normal
+          species: cub
+          gender: female
+          birthday: 2001-07-12T07:00:00.000Z
+          __v: 0
+        - _id: 619c2982bc6bab10abae46e3
+          name: stu
+          personality: lazy
+          species: bull
+          gender: male
+          birthday: 2001-04-20T07:00:00.000Z
+          __v: 0
+        length: 10
+    Villager:
+      title: Villager
+      required:
+      - _id
+      - name
+      - personality
+      - species
+      - gender
+      - birthday
+      - __v
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        personality:
+          type: string
+        species:
+          type: string
+        gender:
+          type: string
+        birthday:
+          type: string
+        __v:
+          type: integer
+          format: int32
+      example:
+        _id: 619c2982bc6bab10abae46e0
+        name: apollo
+        personality: cranky
+        species: eagle
+        gender: male
+        birthday: 2001-07-04T07:00:00.000Z
+        __v: 0
+    updateCharacterRequest:
+      title: updateCharacterRequest
+      required:
+      - birthday
+      type: object
+      properties:
+        birthday:
+          type: string
+      example:
+        birthday: 7/2
+    updateCharacter:
+      title: updateCharacter
+      required:
+      - character
+      type: object
+      properties:
+        character:
+          $ref: '#/components/schemas/Character'
+      example:
+        character:
+          _id: 619c31100cf898ff7954cacb
+          name: dan
+          species: human
+          gender: male
+          birthday: 2001-07-02T07:00:00.000Z
+          createdBy: 61982fb3162f68bbe3415d01
+          createdAt: 2021-11-23T00:08:48.315Z
+          updatedAt: 2021-11-23T00:09:13.912Z
+          __v: 0
+    deleteCharacter:
+      title: deleteCharacter
+      required:
+      - character
+      type: object
+      properties:
+        character:
+          $ref: '#/components/schemas/Character'
+      example:
+        character:
+          _id: 619c31100cf898ff7954cacb
+          name: dan
+          species: human
+          gender: male
+          birthday: 2001-07-02T07:00:00.000Z
+          createdBy: 61982fb3162f68bbe3415d01
+          createdAt: 2021-11-23T00:08:48.315Z
+          updatedAt: 2021-11-23T00:09:13.912Z
+          __v: 0
+    RegisterRequest:
+      title: RegisterRequest
+      required:
+      - name
+      - email
+      - password
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        name: nysa
+        email: email@gmail.com
+        password: pa$$word
+    Register:
+      title: Register
+      required:
+      - user
+      - token
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/User'
+        token:
+          type: string
+      example:
+        user:
+          name: nysa
+          userID: 619c2e4f0cf898ff7954cabf
+        token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MTljMmU0ZjBjZjg5OGZmNzk1NGNhYmYiLCJuYW1lIjoibnlzYSIsImlhdCI6MTYzNzYyNTQyMywiZXhwIjoxNjQwMjE3NDIzfQ.etUt3PBttKSOLMo3S2qLxUzGgvYOxqyXGUUrIqpEIOw
+    User:
+      title: User
+      required:
+      - name
+      - userID
+      type: object
+      properties:
+        name:
+          type: string
+        userID:
+          type: string
+      example:
+        name: nysa
+        userID: 619c2e4f0cf898ff7954cabf
+    LoginRequest:
+      title: LoginRequest
+      required:
+      - email
+      - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: email@gmail.com
+        password: pa$$word
+    Login:
+      title: Login
+      required:
+      - user
+      - token
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/User'
+        token:
+          type: string
+      example:
+        user:
+          name: nysa
+          userID: 619c2e4f0cf898ff7954cabf
+        token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MTljMmU0ZjBjZjg5OGZmNzk1NGNhYmYiLCJuYW1lIjoibnlzYSIsImlhdCI6MTYzNzYyNTQ3NCwiZXhwIjoxNjQwMjE3NDc0fQ.8csjB4qeKCPz-wnXimNfZHeRrvhAW7C4Dtdui3-YjQo
+  securitySchemes:
+    httpBearer:
+      type: http
+      scheme: bearer
+security:
+- httpBearer: []
+tags:
+- name: Characters
+- name: Auth

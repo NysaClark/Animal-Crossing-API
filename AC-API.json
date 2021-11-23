@@ -1,0 +1,467 @@
+{
+	"info": {
+		"_postman_id": "530046cb-cdb1-4e3b-9bf1-030dc31ee9e2",
+		"name": "Animal Crossing API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Characters",
+			"item": [
+				{
+					"name": "createCharacter",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{UserToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"dan\",\r\n    \"gender\": \"male\",\r\n    \"birthday\": \"4/17\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{DEV_URL_CHAR}}",
+							"host": [
+								"{{DEV_URL_CHAR}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "createCharacter",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{UserToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"nysa\",\r\n    \"gender\": \"female\",\r\n    \"birthday\": \"5/15/4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{DEV_URL_CHAR}}",
+									"host": [
+										"{{DEV_URL_CHAR}}"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"character\": {\r\n        \"name\": \"nysa\",\r\n        \"species\": \"human\",\r\n        \"gender\": \"female\",\r\n        \"birthday\": \"2004-05-15T07:00:00.000Z\",\r\n        \"createdBy\": \"61982fb3162f68bbe3415d01\",\r\n        \"_id\": \"619c2f010cf898ff7954cac2\",\r\n        \"createdAt\": \"2021-11-23T00:00:01.929Z\",\r\n        \"updatedAt\": \"2021-11-23T00:00:01.929Z\",\r\n        \"__v\": 0\r\n    }\r\n}"
+						}
+					]
+				},
+				{
+					"name": "getAllCharacters",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{UserToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{DEV_URL_CHAR}}",
+							"host": [
+								"{{DEV_URL_CHAR}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAllCharacters",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{UserToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{DEV_URL_CHAR}}",
+									"host": [
+										"{{DEV_URL_CHAR}}"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"characters\": [\r\n        {\r\n            \"_id\": \"619c2b9f30c7bb45d8b95e71\",\r\n            \"name\": \"nysa\",\r\n            \"species\": \"human\",\r\n            \"gender\": \"female\",\r\n            \"birthday\": \"2001-05-15T07:00:00.000Z\",\r\n            \"createdBy\": \"61982fb3162f68bbe3415d01\",\r\n            \"createdAt\": \"2021-11-22T23:45:35.326Z\",\r\n            \"updatedAt\": \"2021-11-22T23:45:35.326Z\",\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"619c2bab30c7bb45d8b95e73\",\r\n            \"name\": \"ben\",\r\n            \"species\": \"human\",\r\n            \"gender\": \"male\",\r\n            \"birthday\": \"2001-01-10T07:00:00.000Z\",\r\n            \"createdBy\": \"61982fb3162f68bbe3415d01\",\r\n            \"createdAt\": \"2021-11-22T23:45:47.752Z\",\r\n            \"updatedAt\": \"2021-11-22T23:45:47.752Z\",\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"619c2c4aff3134b0c50fadcd\",\r\n            \"name\": \"andrew\",\r\n            \"species\": \"human\",\r\n            \"gender\": \"male\",\r\n            \"birthday\": \"2001-06-21T07:00:00.000Z\",\r\n            \"createdBy\": \"61982fb3162f68bbe3415d01\",\r\n            \"createdAt\": \"2021-11-22T23:48:26.288Z\",\r\n            \"updatedAt\": \"2021-11-22T23:48:26.288Z\",\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"619c2ca8341baa3105f28b93\",\r\n            \"name\": \"danielle\",\r\n            \"species\": \"human\",\r\n            \"gender\": \"female\",\r\n            \"birthday\": \"2001-03-14T07:00:00.000Z\",\r\n            \"createdBy\": \"61982fb3162f68bbe3415d01\",\r\n            \"createdAt\": \"2021-11-22T23:50:00.496Z\",\r\n            \"updatedAt\": \"2021-11-22T23:50:00.496Z\",\r\n            \"__v\": 0\r\n        }\r\n    ],\r\n    \"length\": 4\r\n}"
+						}
+					]
+				},
+				{
+					"name": "getAllVillagers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{UserToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{DEV_URL_CHAR}}/villagers?sort=",
+							"host": [
+								"{{DEV_URL_CHAR}}"
+							],
+							"path": [
+								"villagers"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAllVillagers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{UserToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{DEV_URL_CHAR}}/villagers?sort=name",
+									"host": [
+										"{{DEV_URL_CHAR}}"
+									],
+									"path": [
+										"villagers"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "name"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"villagers\": [\r\n        {\r\n            \"_id\": \"619c2982bc6bab10abae46e0\",\r\n            \"name\": \"apollo\",\r\n            \"personality\": \"cranky\",\r\n            \"species\": \"eagle\",\r\n            \"gender\": \"male\",\r\n            \"birthday\": \"2001-07-04T07:00:00.000Z\",\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"619c2982bc6bab10abae46e2\",\r\n            \"name\": \"audie\",\r\n            \"personality\": \"peppy\",\r\n            \"species\": \"wolf\",\r\n            \"gender\": \"female\",\r\n            \"birthday\": \"2001-08-31T07:00:00.000Z\",\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"619c2982bc6bab10abae46e5\",\r\n            \"name\": \"bertha\",\r\n            \"personality\": \"normal\",\r\n            \"species\": \"hippo\",\r\n            \"gender\": \"female\",\r\n            \"birthday\": \"2001-04-25T07:00:00.000Z\",\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"619c2982bc6bab10abae46df\",\r\n            \"name\": \"curlos\",\r\n            \"personality\": \"smug\",\r\n            \"species\": \"sheep\",\r\n            \"gender\": \"male\",\r\n            \"birthday\": \"2001-05-08T07:00:00.000Z\",\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"619c2982bc6bab10abae46e7\",\r\n            \"name\": \"deli\",\r\n            \"personality\": \"lazy\",\r\n            \"species\": \"monkey\",\r\n            \"gender\": \"male\",\r\n            \"birthday\": \"2001-05-24T07:00:00.000Z\",\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"619c2982bc6bab10abae46e1\",\r\n            \"name\": \"jitters\",\r\n            \"personality\": \"jock\",\r\n            \"species\": \"bird\",\r\n            \"gender\": \"male\",\r\n            \"birthday\": \"2001-02-02T07:00:00.000Z\",\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"619c2982bc6bab10abae46e4\",\r\n            \"name\": \"kiki\",\r\n            \"personality\": \"normal\",\r\n            \"species\": \"cat\",\r\n            \"gender\": \"female\",\r\n            \"birthday\": \"2001-10-08T07:00:00.000Z\",\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"619c2982bc6bab10abae46e8\",\r\n            \"name\": \"maddie\",\r\n            \"personality\": \"peppy\",\r\n            \"species\": \"dog\",\r\n            \"gender\": \"female\",\r\n            \"birthday\": \"2001-01-11T07:00:00.000Z\",\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"619c2982bc6bab10abae46e6\",\r\n            \"name\": \"olive\",\r\n            \"personality\": \"normal\",\r\n            \"species\": \"cub\",\r\n            \"gender\": \"female\",\r\n            \"birthday\": \"2001-07-12T07:00:00.000Z\",\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"_id\": \"619c2982bc6bab10abae46e3\",\r\n            \"name\": \"stu\",\r\n            \"personality\": \"lazy\",\r\n            \"species\": \"bull\",\r\n            \"gender\": \"male\",\r\n            \"birthday\": \"2001-04-20T07:00:00.000Z\",\r\n            \"__v\": 0\r\n        }\r\n    ],\r\n    \"length\": 10\r\n}"
+						}
+					]
+				},
+				{
+					"name": "updateCharacter",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{UserToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"birthday\": \"7/2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{DEV_URL_CHAR}}/:id",
+							"host": [
+								"{{DEV_URL_CHAR}}"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "619c31100cf898ff7954cacb"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "updateCharacter",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{UserToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"birthday\": \"7/2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{DEV_URL_CHAR}}/:id",
+									"host": [
+										"{{DEV_URL_CHAR}}"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "619c31100cf898ff7954cacb"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"character\": {\n        \"_id\": \"619c31100cf898ff7954cacb\",\n        \"name\": \"dan\",\n        \"species\": \"human\",\n        \"gender\": \"male\",\n        \"birthday\": \"2001-07-02T07:00:00.000Z\",\n        \"createdBy\": \"61982fb3162f68bbe3415d01\",\n        \"createdAt\": \"2021-11-23T00:08:48.315Z\",\n        \"updatedAt\": \"2021-11-23T00:09:13.912Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteCharacter",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{UserToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{DEV_URL_CHAR}}/:id",
+							"host": [
+								"{{DEV_URL_CHAR}}"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "619c30ba0cf898ff7954cac7"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "deleteCharacter",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{UserToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{DEV_URL_CHAR}}/:id",
+									"host": [
+										"{{DEV_URL_CHAR}}"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "619c31100cf898ff7954cacb"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"character\": {\r\n        \"_id\": \"619c31100cf898ff7954cacb\",\r\n        \"name\": \"dan\",\r\n        \"species\": \"human\",\r\n        \"gender\": \"male\",\r\n        \"birthday\": \"2001-07-02T07:00:00.000Z\",\r\n        \"createdBy\": \"61982fb3162f68bbe3415d01\",\r\n        \"createdAt\": \"2021-11-23T00:08:48.315Z\",\r\n        \"updatedAt\": \"2021-11-23T00:09:13.912Z\",\r\n        \"__v\": 0\r\n    }\r\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"nysa\",\r\n    \"email\": \"email@gmail.com\",\r\n    \"password\": \"pa$$word\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{DEV_URL_AUTH}}/register",
+							"host": [
+								"{{DEV_URL_AUTH}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"nysa\",\r\n    \"email\": \"email@gmail.com\",\r\n    \"password\": \"pa$$word\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{DEV_URL_AUTH}}/register",
+									"host": [
+										"{{DEV_URL_AUTH}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"user\": {\r\n        \"name\": \"nysa\",\r\n        \"userID\": \"619c2e4f0cf898ff7954cabf\"\r\n    },\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MTljMmU0ZjBjZjg5OGZmNzk1NGNhYmYiLCJuYW1lIjoibnlzYSIsImlhdCI6MTYzNzYyNTQyMywiZXhwIjoxNjQwMjE3NDIzfQ.etUt3PBttKSOLMo3S2qLxUzGgvYOxqyXGUUrIqpEIOw\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json()\r",
+									"pm.globals.set(\"JobToken\", jsonData.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"email@gmail.com\",\r\n    \"password\": \"pa$$word\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{DEV_URL_AUTH}}/login",
+							"host": [
+								"{{DEV_URL_AUTH}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"email@gmail.com\",\r\n    \"password\": \"pa$$word\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{DEV_URL_AUTH}}/login",
+									"host": [
+										"{{DEV_URL_AUTH}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"user\": {\r\n        \"name\": \"nysa\",\r\n        \"userID\": \"619c2e4f0cf898ff7954cabf\"\r\n    },\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MTljMmU0ZjBjZjg5OGZmNzk1NGNhYmYiLCJuYW1lIjoibnlzYSIsImlhdCI6MTYzNzYyNTQ3NCwiZXhwIjoxNjQwMjE3NDc0fQ.8csjB4qeKCPz-wnXimNfZHeRrvhAW7C4Dtdui3-YjQo\"\r\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
